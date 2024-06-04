@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2024 a las 22:15:18
+-- Tiempo de generación: 04-06-2024 a las 03:45:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -399,6 +399,13 @@ CREATE TABLE `favoritas` (
   `cancion_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Volcado de datos para la tabla `favoritas`
+--
+
+INSERT INTO `favoritas` (`id`, `usuario_id`, `cancion_id`) VALUES
+(1, 1, 97);
+
 -- --------------------------------------------------------
 
 --
@@ -602,7 +609,7 @@ ALTER TABLE `canciones`
 -- AUTO_INCREMENT de la tabla `favoritas`
 --
 ALTER TABLE `favoritas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `generos`
