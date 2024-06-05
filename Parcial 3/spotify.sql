@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-06-2024 a las 03:45:47
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Tiempo de generación: 05-06-2024 a las 02:53:49
+-- Versión del servidor: 10.1.39-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -31,7 +32,7 @@ CREATE TABLE `artistas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `descripción` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `artistas`
@@ -59,7 +60,7 @@ CREATE TABLE `artistas_canciones` (
   `id` int(11) NOT NULL,
   `artista_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `artistas_canciones`
@@ -227,165 +228,167 @@ CREATE TABLE `canciones` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `duracion` time NOT NULL,
+  `Fecha` date NOT NULL,
   `activo` tinyint(1) NOT NULL,
-  `genero_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `genero_id` int(11) NOT NULL,
+  `Foto` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `canciones`
 --
 
-INSERT INTO `canciones` (`id`, `nombre`, `duracion`, `activo`, `genero_id`) VALUES
-(1, 'Winter s Ballad', '00:04:37', 0, 1),
-(2, 'Bossa no sé', '00:03:21', 0, 1),
-(3, 'Lo Que Siento\r\n', '00:05:12', 0, 1),
-(4, 'Lover Is a Day\r\n', '00:07:36', 0, 1),
-(5, 'Feelings', '00:03:10', 0, 1),
-(6, 'Dontmakemefallinlove\r\n', '00:03:27', 0, 1),
-(7, 'Summer Time High Time', '00:03:28', 0, 1),
-(8, 'Hydrocodone', '00:02:32', 0, 1),
-(9, 'Drown', '00:03:54', 0, 1),
-(10, 'Ego Death In Thailand', '00:03:14', 0, 1),
-(11, 'Best Friend', '00:02:30', 0, 1),
-(12, 'Far Away From Home', '00:04:26', 0, 1),
-(13, 'Hydrocodone', '00:02:32', 0, 1),
-(14, 'Amor de siempre', '00:05:21', 0, 1),
-(15, 'Keeping Tabs', '00:04:08', 0, 1),
-(16, 'Fix Me', '00:03:02', 0, 1),
-(17, 'Lava Lamp', '00:05:08', 0, 1),
-(18, 'cupid\'s quiver', '00:04:08', 0, 1),
-(19, 'Fin Del Mundo', '00:02:54', 0, 1),
-(20, 'Me vas a echar de menos', '00:02:55', 0, 2),
-(21, 'Lo dudo', '00:03:39', 0, 2),
-(22, 'Pruébame', '00:03:01', 0, 2),
-(23, 'Lo que no fue no será', '00:03:33', 0, 2),
-(24, 'Vamos a darnos tiempo', '00:04:08', 0, 2),
-(25, 'El amar y el querer', '00:03:54', 0, 2),
-(26, 'He renunciado a ti', '00:03:54', 0, 2),
-(27, 'El amor acaba', '00:04:20', 0, 2),
-(28, 'Seré', '00:03:10', 0, 2),
-(29, 'El triste', '00:04:13', 0, 2),
-(30, 'El (Him)', '00:03:26', 0, 2),
-(31, 'Quiero perderme contigo', '00:04:55', 0, 2),
-(32, 'Preso', '00:03:46', 0, 2),
-(33, 'Volcán', '00:04:45', 0, 2),
-(34, 'Gotas de fuego', '00:04:50', 0, 2),
-(35, 'Piel de azúcar', '00:03:37', 0, 2),
-(36, 'Tu me estás volviendo loco', '00:03:00', 0, 2),
-(37, 'La nave del olvido', '00:03:36', 0, 2),
-(38, 'Cuando vayas conmigo', '00:03:55', 0, 2),
-(39, 'Buenos días amor', '00:03:43', 0, 2),
-(40, 'Give Life Back to Music', '00:04:35', 0, 3),
-(41, 'The Game of Love', '00:05:22', 0, 3),
-(42, 'Instant Crush', '00:05:37', 0, 3),
-(43, 'Lose Yourself to Dance', '00:05:53', 0, 3),
-(44, 'Get Lucky', '00:06:09', 0, 3),
-(45, 'Fragments of Time', '00:04:39', 0, 3),
-(46, 'Doin’ It Right', '00:04:11', 0, 3),
-(47, 'One More Time', '00:05:20', 0, 3),
-(48, 'Aerodynamic', '00:03:32', 0, 3),
-(49, 'Digital Love', '00:05:01', 0, 3),
-(50, 'Crescendolls', '00:03:31', 0, 3),
-(51, 'High Life', '00:03:21', 0, 3),
-(52, 'Something About Us', '00:03:52', 0, 3),
-(53, 'Veridis Quo', '00:05:45', 0, 3),
-(54, 'Short Circuit', '00:03:26', 0, 3),
-(55, 'Face to Face', '00:04:00', 0, 3),
-(56, 'Too Long', '00:10:00', 0, 3),
-(57, 'Around the World', '00:07:09', 0, 3),
-(58, 'End of Line', '00:02:36', 0, 3),
-(59, 'Beyond', '00:04:50', 0, 3),
-(60, 'Glimpse of Us', '00:03:53', 0, 1),
-(61, 'SLOW DANCING IN THE DARK', '00:03:29', 0, 1),
-(62, 'Die for You', '00:03:33', 0, 1),
-(63, 'Sanctuary', '00:03:00', 0, 1),
-(64, 'worldstar money (interlude)', '00:02:06', 0, 1),
-(65, 'Yeah Rigth', '00:02:54', 0, 1),
-(66, 'Feeling Like The End', '00:01:42', 0, 1),
-(67, 'Like You Do', '00:04:00', 0, 1),
-(68, 'Daylight', '00:02:43', 0, 1),
-(69, 'Afterthought', '00:03:14', 0, 1),
-(70, 'Run', '00:03:15', 0, 1),
-(71, 'Gimme Love', '00:03:34', 0, 1),
-(72, 'Ew', '00:03:27', 0, 1),
-(73, '777', '00:03:01', 0, 1),
-(74, 'Wanted U', '00:04:11', 0, 1),
-(75, 'MODUS', '00:03:27', 0, 1),
-(76, 'Tick Tock', '00:02:12', 0, 1),
-(77, 'Upgrade', '00:01:29', 0, 1),
-(78, 'High Hopes', '00:03:02', 0, 1),
-(79, 'NITROUS', '00:02:11', 0, 1),
-(80, 'Over Now', '00:03:30', 0, 4),
-(81, 'Call Out My Name', '00:03:48', 0, 4),
-(82, 'Die for You', '00:04:20', 0, 4),
-(83, 'Often', '00:04:09', 0, 4),
-(84, 'I Feel It Coming', '00:04:29', 0, 4),
-(85, 'Starboy', '00:03:50', 0, 4),
-(86, 'True Colors', '00:03:26', 0, 4),
-(87, 'Party Monster', '00:04:09', 0, 4),
-(88, 'Secrets\r\n', '00:04:25', 0, 4),
-(89, 'Love to Lay', '00:03:43', 0, 4),
-(90, 'Nothing Without You', '00:03:18', 0, 4),
-(91, 'Sacrifice', '00:03:08', 0, 4),
-(92, 'Out of Time', '00:03:34', 0, 4),
-(93, 'Take My Breath', '00:05:39', 0, 4),
-(94, 'Is There Someone Else?', '00:03:19', 0, 4),
-(95, 'Less Than Zero', '00:03:31', 0, 4),
-(96, 'How Do I Make You Love Me?', '00:03:34', 0, 4),
-(97, 'A Lonely Night', '00:03:40', 0, 4),
-(98, 'I Was Never There', '00:04:01', 0, 4),
-(99, 'Blinding Lights', '00:03:20', 0, 4),
-(100, 'Symphony Of Destruction', '00:04:06', 0, 5),
-(101, 'Holy Wars... The Punishment Due', '00:06:36', 0, 5),
-(102, 'Hangar 18', '00:05:14', 0, 5),
-(103, 'Take No Prisoners', '00:03:28', 0, 5),
-(104, 'À tout le monde', '00:04:22', 0, 5),
-(105, 'Lucretia', '00:03:58', 0, 5),
-(106, 'Tornado of Souls', '00:05:22', 0, 5),
-(107, 'Dawn Patrol', '00:01:50', 0, 5),
-(108, 'Rust in Peace', '00:05:36', 0, 5),
-(109, 'The Threat Is Real', '00:04:22', 0, 5),
-(110, 'Dystopia', '00:04:59', 0, 5),
-(111, 'Promises', '00:04:28', 0, 5),
-(112, 'The Conjuring', '00:05:02', 0, 5),
-(113, 'Peace Sells', '00:04:02', 0, 5),
-(114, 'Victory', '00:04:26', 0, 5),
-(115, 'Addicted to Chaos', '00:05:27', 0, 5),
-(116, 'The Killing Road', '00:03:51', 0, 5),
-(117, 'Youthanasia', '00:04:07', 0, 5),
-(118, 'Feel Good Inc. (Feel Good Inc)', '00:03:42', 0, 6),
-(119, 'On Melancholy Hill', '00:03:53', 0, 6),
-(120, 'DARE', '00:04:04', 0, 6),
-(121, 'Rhinestone Eyes', '00:03:20', 0, 6),
-(122, 'She\'s My Collar', '00:03:29', 0, 6),
-(123, 'Busted and Blue', '00:04:37', 0, 6),
-(124, 'Ticker Tape', '00:04:28', 0, 6),
-(125, 'Andromeda', '00:03:17', 0, 6),
-(126, 'Let Me Out', '00:02:55', 0, 6),
-(127, 'Saturnz Barz', '00:03:01', 0, 6),
-(128, 'Out of Body', '00:03:34', 0, 6),
-(129, 'The Apprentice', '00:03:54', 0, 6),
-(130, 'Carnival', '00:02:15', 0, 6),
-(131, 'Strobelite', '00:04:32', 0, 6),
-(132, 'Momentz', '00:03:16', 0, 6),
-(133, 'Kids With Guns', '00:03:45', 0, 6),
-(134, 'New Gold', '00:03:36', 0, 6),
-(135, 'Cracker Island', '00:03:36', 0, 6),
-(136, 'Rock the House', '00:03:03', 0, 6),
-(137, 'Boombayah', '00:04:00', 0, 7),
-(138, 'AS IF IT\'S YOUR LAST', '00:03:33', 0, 7),
-(139, 'Crazy Over You', '00:02:45', 0, 7),
-(140, 'DDU-DU DDU-DU', '00:03:31', 0, 7),
-(141, 'How You Like That', '00:03:02', 0, 7),
-(142, 'Lovesick Girls', '00:03:14', 0, 7),
-(143, 'Love to Hate Me', '00:02:51', 0, 7),
-(144, 'Pretty Savage', '00:03:21', 0, 7),
-(145, 'You Never Know', '00:03:51', 0, 7),
-(146, 'Bet You Wanna', '00:02:41', 0, 7),
-(147, 'Kill This Love', '00:03:11', 0, 7),
-(148, 'El ritmo de tus ojos', '00:03:57', 0, 8),
-(149, 'Planta', '00:04:02', 0, 8),
-(150, 'Vía láctea', '00:04:13', 0, 8);
+INSERT INTO `canciones` (`id`, `nombre`, `duracion`, `Fecha`, `activo`, `genero_id`, `Foto`) VALUES
+(1, 'Winter s Ballad', '00:04:37', '2017-01-03', 1, 1, 'https://s.mxmcdn.net/images-storage/albums2/0/7/0/7/6/6/36667070_350_350.jpg'),
+(2, 'Bossa no sé', '00:03:21', '2019-05-21', 1, 1, 'https://i.scdn.co/image/ab67616d0000b27365d444a19f72771cba82cb00'),
+(3, 'Lo Que Siento\r\n', '00:05:12', '2018-02-13', 1, 1, 'https://i.scdn.co/image/ab67616d0000b27365d444a19f72771cba82cb00'),
+(4, 'Lover Is a Day\r\n', '00:07:36', '2018-02-13', 1, 1, 'https://i.scdn.co/image/ab67616d0000b273b1c091e32aad5310ebbdd558'),
+(5, 'Feelings', '00:03:10', '2019-07-16', 1, 1, 'https://cdns-images.dzcdn.net/images/cover/4507dbbfde8b5f4405cfb890934b1d54/500x500.jpg'),
+(6, 'Dontmakemefallinlove\r\n', '00:03:27', '2018-05-03', 1, 1, 'https://i.scdn.co/image/ab67616d0000b2733723db14dc06a047a1d789de'),
+(7, 'Summer Time High Time', '00:03:28', '0000-00-00', 1, 1, 'https://i.scdn.co/image/ab67616d0000b2733723db14dc06a047a1d789de'),
+(8, 'Hydrocodone', '00:02:32', '2019-04-02', 1, 1, 'https://cdns-images.dzcdn.net/images/cover/92cf895b259407e1fd2d913aea7a0fef/500x500.jpg'),
+(9, 'Drown', '00:03:54', '2018-08-01', 1, 1, 'https://indierocks.sfo3.digitaloceanspaces.com/wp-content/uploads/2018/08/Cuco_Clairo.png'),
+(10, 'Ego Death In Thailand', '00:03:14', '0000-00-00', 0, 1, ''),
+(11, 'Best Friend', '00:02:30', '0000-00-00', 0, 1, ''),
+(12, 'Far Away From Home', '00:04:26', '0000-00-00', 0, 1, ''),
+(13, 'Hydrocodone', '00:02:32', '0000-00-00', 0, 1, ''),
+(14, 'Amor de siempre', '00:05:21', '0000-00-00', 0, 1, ''),
+(15, 'Keeping Tabs', '00:04:08', '0000-00-00', 0, 1, ''),
+(16, 'Fix Me', '00:03:02', '0000-00-00', 0, 1, ''),
+(17, 'Lava Lamp', '00:05:08', '0000-00-00', 0, 1, ''),
+(18, 'cupid\'s quiver', '00:04:08', '0000-00-00', 0, 1, ''),
+(19, 'Fin Del Mundo', '00:02:54', '0000-00-00', 0, 1, ''),
+(20, 'Me vas a echar de menos', '00:02:55', '0000-00-00', 0, 2, ''),
+(21, 'Lo dudo', '00:03:39', '0000-00-00', 0, 2, ''),
+(22, 'Pruébame', '00:03:01', '0000-00-00', 0, 2, ''),
+(23, 'Lo que no fue no será', '00:03:33', '0000-00-00', 0, 2, ''),
+(24, 'Vamos a darnos tiempo', '00:04:08', '0000-00-00', 0, 2, ''),
+(25, 'El amar y el querer', '00:03:54', '0000-00-00', 0, 2, ''),
+(26, 'He renunciado a ti', '00:03:54', '0000-00-00', 0, 2, ''),
+(27, 'El amor acaba', '00:04:20', '0000-00-00', 0, 2, ''),
+(28, 'Seré', '00:03:10', '0000-00-00', 0, 2, ''),
+(29, 'El triste', '00:04:13', '0000-00-00', 0, 2, ''),
+(30, 'El (Him)', '00:03:26', '0000-00-00', 0, 2, ''),
+(31, 'Quiero perderme contigo', '00:04:55', '0000-00-00', 0, 2, ''),
+(32, 'Preso', '00:03:46', '0000-00-00', 0, 2, ''),
+(33, 'Volcán', '00:04:45', '0000-00-00', 0, 2, ''),
+(34, 'Gotas de fuego', '00:04:50', '0000-00-00', 0, 2, ''),
+(35, 'Piel de azúcar', '00:03:37', '0000-00-00', 0, 2, ''),
+(36, 'Tu me estás volviendo loco', '00:03:00', '0000-00-00', 0, 2, ''),
+(37, 'La nave del olvido', '00:03:36', '0000-00-00', 0, 2, ''),
+(38, 'Cuando vayas conmigo', '00:03:55', '0000-00-00', 0, 2, ''),
+(39, 'Buenos días amor', '00:03:43', '0000-00-00', 0, 2, ''),
+(40, 'Give Life Back to Music', '00:04:35', '0000-00-00', 0, 3, ''),
+(41, 'The Game of Love', '00:05:22', '0000-00-00', 0, 3, ''),
+(42, 'Instant Crush', '00:05:37', '0000-00-00', 0, 3, ''),
+(43, 'Lose Yourself to Dance', '00:05:53', '0000-00-00', 0, 3, ''),
+(44, 'Get Lucky', '00:06:09', '0000-00-00', 0, 3, ''),
+(45, 'Fragments of Time', '00:04:39', '0000-00-00', 0, 3, ''),
+(46, 'Doin’ It Right', '00:04:11', '0000-00-00', 0, 3, ''),
+(47, 'One More Time', '00:05:20', '0000-00-00', 0, 3, ''),
+(48, 'Aerodynamic', '00:03:32', '0000-00-00', 0, 3, ''),
+(49, 'Digital Love', '00:05:01', '0000-00-00', 0, 3, ''),
+(50, 'Crescendolls', '00:03:31', '0000-00-00', 0, 3, ''),
+(51, 'High Life', '00:03:21', '0000-00-00', 0, 3, ''),
+(52, 'Something About Us', '00:03:52', '0000-00-00', 0, 3, ''),
+(53, 'Veridis Quo', '00:05:45', '0000-00-00', 0, 3, ''),
+(54, 'Short Circuit', '00:03:26', '0000-00-00', 0, 3, ''),
+(55, 'Face to Face', '00:04:00', '0000-00-00', 0, 3, ''),
+(56, 'Too Long', '00:10:00', '0000-00-00', 0, 3, ''),
+(57, 'Around the World', '00:07:09', '0000-00-00', 0, 3, ''),
+(58, 'End of Line', '00:02:36', '0000-00-00', 0, 3, ''),
+(59, 'Beyond', '00:04:50', '0000-00-00', 0, 3, ''),
+(60, 'Glimpse of Us', '00:03:53', '0000-00-00', 0, 1, ''),
+(61, 'SLOW DANCING IN THE DARK', '00:03:29', '0000-00-00', 0, 1, ''),
+(62, 'Die for You', '00:03:33', '0000-00-00', 0, 1, ''),
+(63, 'Sanctuary', '00:03:00', '0000-00-00', 0, 1, ''),
+(64, 'worldstar money (interlude)', '00:02:06', '0000-00-00', 0, 1, ''),
+(65, 'Yeah Rigth', '00:02:54', '0000-00-00', 0, 1, ''),
+(66, 'Feeling Like The End', '00:01:42', '0000-00-00', 0, 1, ''),
+(67, 'Like You Do', '00:04:00', '0000-00-00', 0, 1, ''),
+(68, 'Daylight', '00:02:43', '0000-00-00', 0, 1, ''),
+(69, 'Afterthought', '00:03:14', '0000-00-00', 0, 1, ''),
+(70, 'Run', '00:03:15', '0000-00-00', 0, 1, ''),
+(71, 'Gimme Love', '00:03:34', '0000-00-00', 0, 1, ''),
+(72, 'Ew', '00:03:27', '0000-00-00', 0, 1, ''),
+(73, '777', '00:03:01', '0000-00-00', 0, 1, ''),
+(74, 'Wanted U', '00:04:11', '0000-00-00', 0, 1, ''),
+(75, 'MODUS', '00:03:27', '0000-00-00', 0, 1, ''),
+(76, 'Tick Tock', '00:02:12', '0000-00-00', 0, 1, ''),
+(77, 'Upgrade', '00:01:29', '0000-00-00', 0, 1, ''),
+(78, 'High Hopes', '00:03:02', '0000-00-00', 0, 1, ''),
+(79, 'NITROUS', '00:02:11', '0000-00-00', 0, 1, ''),
+(80, 'Over Now', '00:03:30', '0000-00-00', 0, 4, ''),
+(81, 'Call Out My Name', '00:03:48', '0000-00-00', 0, 4, ''),
+(82, 'Die for You', '00:04:20', '0000-00-00', 0, 4, ''),
+(83, 'Often', '00:04:09', '0000-00-00', 0, 4, ''),
+(84, 'I Feel It Coming', '00:04:29', '0000-00-00', 0, 4, ''),
+(85, 'Starboy', '00:03:50', '0000-00-00', 0, 4, ''),
+(86, 'True Colors', '00:03:26', '0000-00-00', 0, 4, ''),
+(87, 'Party Monster', '00:04:09', '0000-00-00', 0, 4, ''),
+(88, 'Secrets\r\n', '00:04:25', '0000-00-00', 0, 4, ''),
+(89, 'Love to Lay', '00:03:43', '0000-00-00', 0, 4, ''),
+(90, 'Nothing Without You', '00:03:18', '0000-00-00', 0, 4, ''),
+(91, 'Sacrifice', '00:03:08', '0000-00-00', 0, 4, ''),
+(92, 'Out of Time', '00:03:34', '0000-00-00', 0, 4, ''),
+(93, 'Take My Breath', '00:05:39', '0000-00-00', 0, 4, ''),
+(94, 'Is There Someone Else?', '00:03:19', '0000-00-00', 0, 4, ''),
+(95, 'Less Than Zero', '00:03:31', '0000-00-00', 0, 4, ''),
+(96, 'How Do I Make You Love Me?', '00:03:34', '0000-00-00', 0, 4, ''),
+(97, 'A Lonely Night', '00:03:40', '0000-00-00', 0, 4, ''),
+(98, 'I Was Never There', '00:04:01', '0000-00-00', 0, 4, ''),
+(99, 'Blinding Lights', '00:03:20', '0000-00-00', 0, 4, ''),
+(100, 'Symphony Of Destruction', '00:04:06', '0000-00-00', 0, 5, ''),
+(101, 'Holy Wars... The Punishment Due', '00:06:36', '0000-00-00', 0, 5, ''),
+(102, 'Hangar 18', '00:05:14', '0000-00-00', 0, 5, ''),
+(103, 'Take No Prisoners', '00:03:28', '0000-00-00', 0, 5, ''),
+(104, 'À tout le monde', '00:04:22', '0000-00-00', 0, 5, ''),
+(105, 'Lucretia', '00:03:58', '0000-00-00', 0, 5, ''),
+(106, 'Tornado of Souls', '00:05:22', '0000-00-00', 0, 5, ''),
+(107, 'Dawn Patrol', '00:01:50', '0000-00-00', 0, 5, ''),
+(108, 'Rust in Peace', '00:05:36', '0000-00-00', 0, 5, ''),
+(109, 'The Threat Is Real', '00:04:22', '0000-00-00', 0, 5, ''),
+(110, 'Dystopia', '00:04:59', '0000-00-00', 0, 5, ''),
+(111, 'Promises', '00:04:28', '0000-00-00', 0, 5, ''),
+(112, 'The Conjuring', '00:05:02', '0000-00-00', 0, 5, ''),
+(113, 'Peace Sells', '00:04:02', '0000-00-00', 0, 5, ''),
+(114, 'Victory', '00:04:26', '0000-00-00', 0, 5, ''),
+(115, 'Addicted to Chaos', '00:05:27', '0000-00-00', 0, 5, ''),
+(116, 'The Killing Road', '00:03:51', '0000-00-00', 0, 5, ''),
+(117, 'Youthanasia', '00:04:07', '0000-00-00', 0, 5, ''),
+(118, 'Feel Good Inc. (Feel Good Inc)', '00:03:42', '0000-00-00', 0, 6, ''),
+(119, 'On Melancholy Hill', '00:03:53', '0000-00-00', 0, 6, ''),
+(120, 'DARE', '00:04:04', '0000-00-00', 0, 6, ''),
+(121, 'Rhinestone Eyes', '00:03:20', '0000-00-00', 0, 6, ''),
+(122, 'She\'s My Collar', '00:03:29', '0000-00-00', 0, 6, ''),
+(123, 'Busted and Blue', '00:04:37', '0000-00-00', 0, 6, ''),
+(124, 'Ticker Tape', '00:04:28', '0000-00-00', 0, 6, ''),
+(125, 'Andromeda', '00:03:17', '0000-00-00', 0, 6, ''),
+(126, 'Let Me Out', '00:02:55', '0000-00-00', 0, 6, ''),
+(127, 'Saturnz Barz', '00:03:01', '0000-00-00', 0, 6, ''),
+(128, 'Out of Body', '00:03:34', '0000-00-00', 0, 6, ''),
+(129, 'The Apprentice', '00:03:54', '0000-00-00', 0, 6, ''),
+(130, 'Carnival', '00:02:15', '0000-00-00', 0, 6, ''),
+(131, 'Strobelite', '00:04:32', '0000-00-00', 0, 6, ''),
+(132, 'Momentz', '00:03:16', '0000-00-00', 0, 6, ''),
+(133, 'Kids With Guns', '00:03:45', '0000-00-00', 0, 6, ''),
+(134, 'New Gold', '00:03:36', '0000-00-00', 0, 6, ''),
+(135, 'Cracker Island', '00:03:36', '0000-00-00', 0, 6, ''),
+(136, 'Rock the House', '00:03:03', '0000-00-00', 0, 6, ''),
+(137, 'Boombayah', '00:04:00', '0000-00-00', 0, 7, ''),
+(138, 'AS IF IT\'S YOUR LAST', '00:03:33', '0000-00-00', 0, 7, ''),
+(139, 'Crazy Over You', '00:02:45', '0000-00-00', 0, 7, ''),
+(140, 'DDU-DU DDU-DU', '00:03:31', '0000-00-00', 0, 7, ''),
+(141, 'How You Like That', '00:03:02', '0000-00-00', 0, 7, ''),
+(142, 'Lovesick Girls', '00:03:14', '0000-00-00', 0, 7, ''),
+(143, 'Love to Hate Me', '00:02:51', '0000-00-00', 0, 7, ''),
+(144, 'Pretty Savage', '00:03:21', '0000-00-00', 0, 7, ''),
+(145, 'You Never Know', '00:03:51', '0000-00-00', 0, 7, ''),
+(146, 'Bet You Wanna', '00:02:41', '0000-00-00', 0, 7, ''),
+(147, 'Kill This Love', '00:03:11', '0000-00-00', 0, 7, ''),
+(148, 'El ritmo de tus ojos', '00:03:57', '0000-00-00', 0, 8, ''),
+(149, 'Planta', '00:04:02', '0000-00-00', 0, 8, ''),
+(150, 'Vía láctea', '00:04:13', '0000-00-00', 0, 8, '');
 
 -- --------------------------------------------------------
 
@@ -397,7 +400,7 @@ CREATE TABLE `favoritas` (
   `id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `favoritas`
@@ -415,7 +418,7 @@ INSERT INTO `favoritas` (`id`, `usuario_id`, `cancion_id`) VALUES
 CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `generos`
@@ -441,7 +444,7 @@ CREATE TABLE `membresías` (
   `id` int(11) NOT NULL,
   `descripción` varchar(100) NOT NULL,
   `Precio` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `membresías`
@@ -465,7 +468,7 @@ CREATE TABLE `playlists` (
   `duracion` time NOT NULL,
   `total_canciones` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -478,7 +481,7 @@ CREATE TABLE `playlists_canciones` (
   `playlist_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -491,7 +494,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `membresia_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -499,7 +502,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `membresia_id`) VALUES
 (1, 'Nancy Millán', 'nancy.millan22@cetis107.edu.mx', 2),
-(2, 'Juan Pérez', 'juan.perez@gmail.com', 2),
+(2, 'Amanda Mendoza', 'etesech@gmail.com', 2),
 (3, 'María González', 'maria.gonzalez@gmail.com', 1),
 (4, 'Carlos López', 'carlos.lopez@gmail.com', 3),
 (5, 'Ana Martínez', 'ana.martinez@gmail.com', 1),
