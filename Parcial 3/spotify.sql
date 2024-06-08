@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2024 a las 02:53:49
--- Versión del servidor: 10.1.39-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 08-06-2024 a las 17:05:16
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `spotify`
+-- Base de datos: `spotify1`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +31,7 @@ CREATE TABLE `artistas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `descripción` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `artistas`
@@ -60,7 +59,7 @@ CREATE TABLE `artistas_canciones` (
   `id` int(11) NOT NULL,
   `artista_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `artistas_canciones`
@@ -232,7 +231,7 @@ CREATE TABLE `canciones` (
   `activo` tinyint(1) NOT NULL,
   `genero_id` int(11) NOT NULL,
   `Foto` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `canciones`
@@ -248,36 +247,36 @@ INSERT INTO `canciones` (`id`, `nombre`, `duracion`, `Fecha`, `activo`, `genero_
 (7, 'Summer Time High Time', '00:03:28', '0000-00-00', 1, 1, 'https://i.scdn.co/image/ab67616d0000b2733723db14dc06a047a1d789de'),
 (8, 'Hydrocodone', '00:02:32', '2019-04-02', 1, 1, 'https://cdns-images.dzcdn.net/images/cover/92cf895b259407e1fd2d913aea7a0fef/500x500.jpg'),
 (9, 'Drown', '00:03:54', '2018-08-01', 1, 1, 'https://indierocks.sfo3.digitaloceanspaces.com/wp-content/uploads/2018/08/Cuco_Clairo.png'),
-(10, 'Ego Death In Thailand', '00:03:14', '0000-00-00', 0, 1, ''),
-(11, 'Best Friend', '00:02:30', '0000-00-00', 0, 1, ''),
-(12, 'Far Away From Home', '00:04:26', '0000-00-00', 0, 1, ''),
-(13, 'Hydrocodone', '00:02:32', '0000-00-00', 0, 1, ''),
-(14, 'Amor de siempre', '00:05:21', '0000-00-00', 0, 1, ''),
-(15, 'Keeping Tabs', '00:04:08', '0000-00-00', 0, 1, ''),
-(16, 'Fix Me', '00:03:02', '0000-00-00', 0, 1, ''),
-(17, 'Lava Lamp', '00:05:08', '0000-00-00', 0, 1, ''),
-(18, 'cupid\'s quiver', '00:04:08', '0000-00-00', 0, 1, ''),
-(19, 'Fin Del Mundo', '00:02:54', '0000-00-00', 0, 1, ''),
-(20, 'Me vas a echar de menos', '00:02:55', '0000-00-00', 0, 2, ''),
-(21, 'Lo dudo', '00:03:39', '0000-00-00', 0, 2, ''),
-(22, 'Pruébame', '00:03:01', '0000-00-00', 0, 2, ''),
-(23, 'Lo que no fue no será', '00:03:33', '0000-00-00', 0, 2, ''),
-(24, 'Vamos a darnos tiempo', '00:04:08', '0000-00-00', 0, 2, ''),
-(25, 'El amar y el querer', '00:03:54', '0000-00-00', 0, 2, ''),
-(26, 'He renunciado a ti', '00:03:54', '0000-00-00', 0, 2, ''),
-(27, 'El amor acaba', '00:04:20', '0000-00-00', 0, 2, ''),
-(28, 'Seré', '00:03:10', '0000-00-00', 0, 2, ''),
-(29, 'El triste', '00:04:13', '0000-00-00', 0, 2, ''),
-(30, 'El (Him)', '00:03:26', '0000-00-00', 0, 2, ''),
-(31, 'Quiero perderme contigo', '00:04:55', '0000-00-00', 0, 2, ''),
-(32, 'Preso', '00:03:46', '0000-00-00', 0, 2, ''),
-(33, 'Volcán', '00:04:45', '0000-00-00', 0, 2, ''),
-(34, 'Gotas de fuego', '00:04:50', '0000-00-00', 0, 2, ''),
-(35, 'Piel de azúcar', '00:03:37', '0000-00-00', 0, 2, ''),
-(36, 'Tu me estás volviendo loco', '00:03:00', '0000-00-00', 0, 2, ''),
-(37, 'La nave del olvido', '00:03:36', '0000-00-00', 0, 2, ''),
-(38, 'Cuando vayas conmigo', '00:03:55', '0000-00-00', 0, 2, ''),
-(39, 'Buenos días amor', '00:03:43', '0000-00-00', 0, 2, ''),
+(10, 'Ego Death In Thailand', '00:03:14', '2019-06-01', 1, 1, 'https://i1.sndcdn.com/artworks-Ft0Vx6OPcuzw-0-t500x500.jpg'),
+(11, 'Best Friend', '00:02:30', '2012-05-14', 1, 1, 'https://i.scdn.co/image/ab67616d0000b27365d444a19f72771cba82cb00'),
+(12, 'Far Away From Home', '00:04:26', '2013-07-19', 1, 1, 'https://i.scdn.co/image/ab67616d0000b27365d444a19f72771cba82cb00'),
+(13, 'Hydrocodone', '00:02:32', '2014-08-21', 1, 1, 'https://lastfm.freetls.fastly.net/i/u/ar0/6af07214deff7b2d71b96fc33a91c585.jpg'),
+(14, 'Amor de siempre', '00:05:21', '2015-11-25', 1, 1, 'https://c.saavncdn.com/135/wannabewithu-English-2016-20220318094805-150x150.jpg'),
+(15, 'Keeping Tabs', '00:04:08', '2016-02-03', 1, 1, 'https://i1.sndcdn.com/artworks-j6jZWb39Og1O-0-t500x500.jpg'),
+(16, 'Fix Me', '00:03:02', '2017-03-10', 1, 1, 'https://i1.sndcdn.com/artworks-000481546506-fap4ii-t500x500.jpg'),
+(17, 'Lava Lamp', '00:05:08', '2018-04-22', 1, 1, 'https://i.ytimg.com/vi/aWb3usKuDmo/maxresdefault.jpg'),
+(18, 'cupid\'s quiver', '00:04:08', '2019-06-30', 1, 1, 'https://i.scdn.co/image/ab67616d0000b273b1c091e32aad5310ebbdd558'),
+(19, 'Fin Del Mundo', '00:02:54', '2020-07-14', 1, 1, 'https://i.scdn.co/image/ab67616d0000b273be9a3e8a5e535ec7240f8317'),
+(20, 'Me vas a echar de menos', '00:02:55', '2021-09-27', 1, 2, 'https://i.scdn.co/image/ab67616d0000b273bfffa664e6230db6273776a0'),
+(21, 'Lo dudo', '00:03:39', '1969-03-10', 1, 2, 'https://i.scdn.co/image/ab67616d0000b273832993cf2104eb5d31ee6d9a'),
+(22, 'Pruébame', '00:03:01', '1973-08-01', 1, 2, ''),
+(23, 'Lo que no fue no será', '00:03:33', '1978-03-15', 1, 2, ''),
+(24, 'Vamos a darnos tiempo', '00:04:08', '1985-08-05', 1, 2, ''),
+(25, 'El amar y el querer', '00:03:54', '2009-08-26', 1, 2, ''),
+(26, 'He renunciado a ti', '00:03:54', '1992-07-23', 1, 2, ''),
+(27, 'El amor acaba', '00:04:20', '2009-08-26', 1, 2, ''),
+(28, 'Seré', '00:03:10', '1972-11-20', 1, 2, ''),
+(29, 'El triste', '00:04:13', '2017-02-08', 1, 2, ''),
+(30, 'El (Him)', '00:03:26', '1997-05-22', 1, 2, ''),
+(31, 'Quiero perderme contigo', '00:04:55', '2011-09-21', 1, 2, ''),
+(32, 'Preso', '00:03:46', '1993-11-12', 1, 2, ''),
+(33, 'Volcán', '00:04:45', '1982-10-04', 1, 2, ''),
+(34, 'Gotas de fuego', '00:04:50', '1976-12-04', 1, 2, ''),
+(35, 'Piel de azúcar', '00:03:37', '1995-12-01', 1, 2, ''),
+(36, 'Tu me estás volviendo loco', '00:03:00', '1977-09-30', 1, 2, ''),
+(37, 'La nave del olvido', '00:03:36', '2016-07-01', 1, 2, ''),
+(38, 'Cuando vayas conmigo', '00:03:55', '2005-02-19', 1, 2, ''),
+(39, 'Buenos días amor', '00:03:43', '1985-08-05', 1, 2, ''),
 (40, 'Give Life Back to Music', '00:04:35', '0000-00-00', 0, 3, ''),
 (41, 'The Game of Love', '00:05:22', '0000-00-00', 0, 3, ''),
 (42, 'Instant Crush', '00:05:37', '0000-00-00', 0, 3, ''),
@@ -400,14 +399,113 @@ CREATE TABLE `favoritas` (
   `id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `favoritas`
 --
 
 INSERT INTO `favoritas` (`id`, `usuario_id`, `cancion_id`) VALUES
-(1, 1, 97);
+(1, 1, 97),
+(2, 2, 2),
+(3, 4, 2),
+(4, 8, 2),
+(5, 7, 2),
+(6, 2, 69),
+(7, 5, 138),
+(8, 10, 59),
+(9, 8, 126),
+(10, 7, 60),
+(11, 9, 125),
+(12, 8, 50),
+(13, 7, 2),
+(14, 5, 125),
+(15, 5, 81),
+(16, 6, 2),
+(17, 3, 3),
+(18, 7, 18),
+(19, 9, 67),
+(20, 6, 23),
+(21, 7, 22),
+(22, 6, 47),
+(23, 5, 112),
+(24, 2, 11),
+(25, 2, 14),
+(26, 4, 39),
+(27, 9, 57),
+(28, 8, 130),
+(29, 7, 146),
+(30, 1, 39),
+(31, 4, 139),
+(32, 3, 50),
+(33, 5, 38),
+(34, 7, 137),
+(35, 4, 135),
+(36, 5, 40),
+(37, 4, 16),
+(38, 6, 5),
+(39, 3, 6),
+(40, 1, 15),
+(41, 8, 44),
+(42, 9, 48),
+(43, 9, 69),
+(44, 6, 125),
+(45, 5, 59),
+(46, 9, 69),
+(47, 6, 48),
+(48, 8, 93),
+(49, 8, 103),
+(50, 4, 129),
+(51, 9, 41),
+(52, 8, 136),
+(53, 2, 32),
+(54, 9, 48),
+(55, 7, 125),
+(56, 10, 14),
+(57, 7, 35),
+(58, 1, 49),
+(59, 7, 64),
+(60, 6, 62),
+(61, 1, 123),
+(62, 7, 29),
+(63, 9, 82),
+(64, 7, 38),
+(65, 4, 67),
+(66, 3, 35),
+(67, 7, 76),
+(68, 7, 144),
+(69, 10, 21),
+(70, 3, 23),
+(71, 9, 117),
+(72, 6, 145),
+(73, 6, 65),
+(74, 6, 64),
+(75, 7, 1),
+(76, 2, 137),
+(77, 6, 74),
+(78, 4, 33),
+(79, 7, 114),
+(80, 4, 53),
+(81, 9, 53),
+(82, 4, 24),
+(83, 5, 77),
+(84, 6, 36),
+(85, 9, 86),
+(86, 4, 106),
+(87, 5, 56),
+(88, 8, 124),
+(89, 5, 76),
+(90, 6, 109),
+(91, 7, 116),
+(92, 7, 41),
+(93, 7, 81),
+(94, 5, 1),
+(95, 6, 145),
+(96, 7, 129),
+(97, 9, 149),
+(98, 4, 113),
+(99, 9, 35),
+(100, 7, 32);
 
 -- --------------------------------------------------------
 
@@ -418,7 +516,7 @@ INSERT INTO `favoritas` (`id`, `usuario_id`, `cancion_id`) VALUES
 CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `generos`
@@ -444,7 +542,7 @@ CREATE TABLE `membresías` (
   `id` int(11) NOT NULL,
   `descripción` varchar(100) NOT NULL,
   `Precio` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `membresías`
@@ -468,7 +566,14 @@ CREATE TABLE `playlists` (
   `duracion` time NOT NULL,
   `total_canciones` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `playlists`
+--
+
+INSERT INTO `playlists` (`id`, `nombre`, `usuario_id`, `duracion`, `total_canciones`, `descripcion`) VALUES
+(1, 'Playlist para relax', 1, '00:00:00', 0, 'Esta playlist, como dice su nombre, son canciones relajantes');
 
 -- --------------------------------------------------------
 
@@ -481,7 +586,7 @@ CREATE TABLE `playlists_canciones` (
   `playlist_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -494,7 +599,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `membresia_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -612,7 +717,7 @@ ALTER TABLE `canciones`
 -- AUTO_INCREMENT de la tabla `favoritas`
 --
 ALTER TABLE `favoritas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT de la tabla `generos`
@@ -630,7 +735,7 @@ ALTER TABLE `membresías`
 -- AUTO_INCREMENT de la tabla `playlists`
 --
 ALTER TABLE `playlists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `playlists_canciones`
