@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2024 a las 17:05:16
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Tiempo de generación: 12-06-2024 a las 03:02:47
+-- Versión del servidor: 10.1.39-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `spotify1`
+-- Base de datos: `spotify`
 --
 
 -- --------------------------------------------------------
@@ -31,7 +32,7 @@ CREATE TABLE `artistas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `descripción` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `artistas`
@@ -59,7 +60,7 @@ CREATE TABLE `artistas_canciones` (
   `id` int(11) NOT NULL,
   `artista_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `artistas_canciones`
@@ -231,7 +232,7 @@ CREATE TABLE `canciones` (
   `activo` tinyint(1) NOT NULL,
   `genero_id` int(11) NOT NULL,
   `Foto` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `canciones`
@@ -399,7 +400,7 @@ CREATE TABLE `favoritas` (
   `id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `favoritas`
@@ -516,7 +517,7 @@ INSERT INTO `favoritas` (`id`, `usuario_id`, `cancion_id`) VALUES
 CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `generos`
@@ -542,7 +543,7 @@ CREATE TABLE `membresías` (
   `id` int(11) NOT NULL,
   `descripción` varchar(100) NOT NULL,
   `Precio` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `membresías`
@@ -566,14 +567,15 @@ CREATE TABLE `playlists` (
   `duracion` time NOT NULL,
   `total_canciones` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `playlists`
 --
 
 INSERT INTO `playlists` (`id`, `nombre`, `usuario_id`, `duracion`, `total_canciones`, `descripcion`) VALUES
-(1, 'Playlist para relax', 1, '00:00:00', 0, 'Esta playlist, como dice su nombre, son canciones relajantes');
+(1, 'Playlist para relax', 1, '09:00:00', 3, 'Esta playlist, como dice su nombre, son canciones relajantes'),
+(2, 'carne asada', 10, '15:09:00', 5, 'Musica para la carne asada con los tios metaleros');
 
 -- --------------------------------------------------------
 
@@ -586,7 +588,21 @@ CREATE TABLE `playlists_canciones` (
   `playlist_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `playlists_canciones`
+--
+
+INSERT INTO `playlists_canciones` (`id`, `playlist_id`, `cancion_id`, `usuario_id`) VALUES
+(1, 2, 115, 4),
+(2, 2, 104, 4),
+(3, 2, 110, 4),
+(4, 2, 101, 4),
+(5, 2, 45, 4),
+(6, 1, 18, 1),
+(7, 1, 123, 1),
+(18, 1, 53, 1);
 
 -- --------------------------------------------------------
 
@@ -599,7 +615,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `membresia_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -735,13 +751,13 @@ ALTER TABLE `membresías`
 -- AUTO_INCREMENT de la tabla `playlists`
 --
 ALTER TABLE `playlists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `playlists_canciones`
 --
 ALTER TABLE `playlists_canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
