@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-06-2024 a las 03:02:47
+-- Tiempo de generación: 13-06-2024 a las 04:26:54
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -575,7 +575,10 @@ CREATE TABLE `playlists` (
 
 INSERT INTO `playlists` (`id`, `nombre`, `usuario_id`, `duracion`, `total_canciones`, `descripcion`) VALUES
 (1, 'Playlist para relax', 1, '09:00:00', 3, 'Esta playlist, como dice su nombre, son canciones relajantes'),
-(2, 'carne asada', 10, '15:09:00', 5, 'Musica para la carne asada con los tios metaleros');
+(2, 'carne asada', 10, '15:09:00', 5, 'Musica para la carne asada con los tios metaleros'),
+(3, 'flechado', 8, '00:15:00', 3, 'Esta playlist de los enamorados con canciones cute'),
+(4, 'playlist para llorar', 6, '00:15:00', 3, 'para llorar bien fuerte'),
+(5, 'para bailar', 10, '00:15:00', 3, 'bailaaa');
 
 -- --------------------------------------------------------
 
@@ -602,7 +605,16 @@ INSERT INTO `playlists_canciones` (`id`, `playlist_id`, `cancion_id`, `usuario_i
 (5, 2, 45, 4),
 (6, 1, 18, 1),
 (7, 1, 123, 1),
-(18, 1, 53, 1);
+(8, 1, 53, 1),
+(9, 3, 14, 8),
+(10, 3, 39, 8),
+(11, 3, 3, 8),
+(12, 4, 29, 6),
+(13, 4, 27, 6),
+(14, 4, 26, 6),
+(15, 5, 148, 10),
+(16, 5, 71, 10),
+(17, 5, 35, 10);
 
 -- --------------------------------------------------------
 
@@ -751,13 +763,13 @@ ALTER TABLE `membresías`
 -- AUTO_INCREMENT de la tabla `playlists`
 --
 ALTER TABLE `playlists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `playlists_canciones`
 --
 ALTER TABLE `playlists_canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
