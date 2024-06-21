@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto final parcial #3</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.7.1.js"></script>
+
 </head>
 <body>
-    Nancy Millán 
+
+    <center>
+    <div class="container">
+        <h1 style="color: plum;">Proyecto final  Parcial 3</h1>
+        <div style="background-color: palegoldenrod;"><h3 style="color: gray;">Millán Sánchez Nancy Paola 4AVP</h3></div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h3>SELECT * FROM alumno;</h3>
+                <p style="color: plum;">Consulta #1.</p> <p><b>Obtener el listado de todos los alumnos de la facultad.</b></p>
+                <img src="consulta1.png" alt="" class="img-fluid">
+            </div>
+        </div>
+
+        <hr>
+
+    
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h3>SELECT curso.nombreDescriptivo,asignatura.nombre <br>
+                    FROM curso                                       <br>
+                    INNER JOIN asignatura                            <br>
+                    ON curso.idCurso = asignatura.curso</h3>
+                <p style="color: plum;">Consulta #2.</p> <p><b>Obtener el listado de cursos y las asignaturas que tiene asociadas.</b></p>
+                <img src="consulta2.png" alt="" class="img-fluid">
+            </div>
+        </div>
+
+
+
+
+</center>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
