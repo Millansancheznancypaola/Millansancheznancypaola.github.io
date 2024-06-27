@@ -6,8 +6,15 @@
     <title>Proyecto final parcial #3</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery-3.7.1.js"></script>
+  
+    <style>
+        h3{
+            background-color: black;
+            color: white;
+        }
 
     
+    </style>
 
 
 </head>
@@ -17,7 +24,7 @@
     <center>
     <div class="container">
         <h1 style="color: plum;">Proyecto final  Parcial 3</h1>
-        <div style="background-color: palegoldenrod;"><h3 style="color: gray;">Millán Sánchez Nancy Paola 4AVP</h3></div>
+        <div style="background-color: palegoldenrod;"><h3 style="color: white;">Millán Sánchez Nancy Paola 4AVP</h3></div>
         <hr>
         <div class="row">
             <div class="col">
@@ -119,8 +126,12 @@
             <div class="col">
 
                 <p style="color: plum;">Consulta #8.</p> <p><b>Obtener listado de alumnos que les da clase con ID PR048(JOSE MANUEL),sin importar en que asignatura esté inscrito. </b></p>
-                <h3> codigo</h3>     
-                <img src="consulta" alt="" class="img-fluid">
+                <h3>SELECT alumno.idAlumno, alumno.nombre, alumno.apellido1, alumno.apellido2, alumno.email <br>
+                    FROM alumno 
+                    JOIN matricula ON alumno.idAlumno = matricula.idAlumno<br>
+                    JOIN impartir ON matricula.idAsignatura = impartir.idAsignatura<br>
+                    WHERE impartir.idProfesor = 'PR048';</h3>     
+                <img src="consulta8.png" alt="" class="img-fluid">
             </div>
         </div>
 
@@ -129,9 +140,17 @@
         <div class="row">
             <div class="col">
 
-                <p style="color: plum;">Consulta #9.</p> <p><b>Obtener listado de cursos, con asignatur, y el maestro que las imparte </b></p>
-                <h3> codigo</h3>     
-                <img src="consulta" alt="" class="img-fluid">
+                <p style="color: plum;">Consulta #9.</p> <p><b>Obtener listado de cursos, con asignatura, y el maestro que las imparte </b></p>
+                <h3> SELECT curso.idCurso, curso.nombreDescriptivo <br>
+                AS nombre_curso, asignatura.idAsignatura, <br>
+                asignatura.nombre AS nombre_asignatura, <br>
+                profesor.idProfesor, profesor.nombre AS nombre_profesor,<br>
+                 profesor.apellido1 AS apellido1_profesor, <br>
+                 profesor.apellido2 AS apellido2_profesor <br>
+                 FROM curso JOIN asignatura ON curso.idCurso = asignatura.curso<br>
+                 JOIN impartir ON asignatura.idAsignatura = impartir.idAsignatura JOIN profesor ON impartir.idProfesor = profesor.idProfesor <br>
+                 ORDER BY curso.idCurso, asignatura.idAsignatura, profesor.idProfesor;</h3>     
+                <img src="consulta9.png" alt="" class="img-fluid">
             </div>
         </div>
 
@@ -141,8 +160,22 @@
             <div class="col">
 
                 <p style="color: plum;">Consulta #10.</p> <p><b>Obtener listado de alumnos, con asignaturas que cursa, profesor que las imparte yal curso al que pertenece </b></p>
-                <h3> codigo</h3>     
-                <img src="consulta" alt="" class="img-fluid">
+                <h3> SELECT alumno.idAlumno,alumno.nombre AS nombre_alumno, alumno.apellido1 <br>
+                     AS apellido1_alumno,alumno.apellido2 <br> AS apellido2_alumno,<br>
+                    asignatura.idAsignatura,asignatura.nombre <br> AS nombre_asignatura,profesor.idProfesor,<br>
+                    profesor.nombre AS nombre_profesor,profesor.apellido1 <br>AS apellido1_profesor, 
+                profesor.apellido2 AS apellido2_profesor, 
+                curso.idCurso, <br>
+                    
+                curso.nombreDescriptivo AS nombre_curso 
+                FROM alumno <br>
+                JOIN matricula ON alumno.idAlumno = matricula.idAlumno <br>
+                JOIN asignatura ON matricula.idAsignatura = asignatura.idAsignatura <br>
+                JOIN impartir ON asignatura.idAsignatura = impartir.idAsignatura <br>
+                JOIN profesor ON impartir.idProfesor = profesor.idProfesor <br>
+                JOIN curso ON asignatura.curso = curso.idCurso <br>
+                ORDER BY alumno.idAlumno, asignatura.idAsignatura;</h3>     
+                <img src="consulta10.png" alt="" class="img-fluid">
             </div>
         </div>
 
