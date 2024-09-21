@@ -11,15 +11,18 @@
     $pregunta8 = $_POST["pregunta8"];
     $pregunta9 = $_POST["pregunta9"];
     $pregunta10 = $_POST["pregunta10"];
+    $alumno = $_POST["nombre"];
+
+    echo"<h2>Alumno:".$alumno."</h2>";
 
      //valida pregunta 1.  1.¿Qué es el círculo cromático?
      echo "<h3>  1.¿Qué es el círculo cromático? </h3>";
      echo "<h5>Repuesta seleccionada: ".$pregunta1." ---- Correcta = Un gráfico que organiza los colores según sus relaciones cromáticas </h5>";
      if($pregunta1 == "Un gráfico que organiza los colores según sus relaciones cromáticas"){
          $aciertos++;
-         echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+         echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
      } else {
-         echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+         echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
      }
      //------FIN de la pregunta 1 ------------------
      
@@ -30,9 +33,9 @@
     echo "<h5>Repuesta seleccionada ".$pregunta2." ---- Correcta = Color</h5>";
     if(strtoupper($pregunta2) == "COLOR"){
         $aciertos++;
-        echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+        echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
     } else {
-        echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+        echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
     }
     //Fin de la pregunta 2 -----------------------------
     
@@ -52,12 +55,12 @@
         }
         if($p3_respuestas_correctas == 3){
             $aciertos++;
-            echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+            echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
         } else {
-            echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+            echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
         }
     } else {
-        echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+        echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
     }
     //----------FIN pregunta 3 ------------------------------------
 
@@ -78,12 +81,12 @@
         }
         if($p3_respuestas_correctas == 3){
             $aciertos++;
-            echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+            echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
         } else {
-            echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+            echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
         }
     } else {
-        echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+        echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
     }
     //----------FIN pregunta 4 ------------------------------------
 
@@ -94,9 +97,9 @@
     echo "<h5>Repuesta seleccionada: ".$pregunta5." ---- Correcta = Colores que resultan de mezclar un primario con un secundarios </h5>";
     if($pregunta5 == "Colores que resultan de mezclar un primario con un secundario"){
         $aciertos++;
-        echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+        echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
     } else {
-        echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+        echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
     }
     //------FIN de la pregunta 5 ------------------
 
@@ -108,9 +111,9 @@
       echo "<h5>Repuesta seleccionada: ".$pregunta6." ---- Correcta =Los colores cálidos transmiten calor y los fríos calma</h5>";
       if($pregunta6 == "Los colores cálidos transmiten calor y los fríos calma"){
           $aciertos++;
-          echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+          echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
       } else {
-          echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+          echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
       }
       //------FIN de la pregunta 6 ------------------
   
@@ -121,9 +124,9 @@
       echo "<h5>Repuesta seleccionada: ".$pregunta7." ---- Correcta =Colores que están opuestos en el círculo cromático</h5>";
       if($pregunta7 == "Colores que están opuestos en el círculo cromático"){
           $aciertos++;
-          echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+          echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
       } else {
-          echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+          echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
       }
       //------FIN de la pregunta 7 ------------------
   
@@ -134,9 +137,9 @@
         echo "<h5>Repuesta seleccionada: ".$pregunta8." ---- Correcta =Se intensifican entre sí</h5>";
         if($pregunta8 == "Se intensifican entre sí"){
             $aciertos++;
-            echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+            echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
         } else {
-            echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+            echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
         }
         //------FIN de la pregunta 8 ------------------
 
@@ -147,9 +150,9 @@
            echo "<h5>Repuesta seleccionada: ".$pregunta9." ---- Correcta =La intensidad o pureza de un color</h5>";
            if($pregunta9 == "La intensidad o pureza de un color"){
                $aciertos++;
-               echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+               echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
            } else {
-               echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+               echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
            }
            //------FIN de la pregunta 9 ------------------
    
@@ -160,9 +163,9 @@
            echo "<h5>Repuesta seleccionada: ".$pregunta10." ---- Correcta =Usando colores que están uno junto al otro en el círculo cromático</h5>";
            if($pregunta10 == "Usando colores que están uno junto al otro en el círculo cromático"){
                $aciertos++;
-               echo "<img src='multimedia/correcta.jpg' width='50px'><hr>";
+               echo "<img src='multimedia/correcta.jpeg' width='50px'><hr>";
            } else {
-               echo "<img src='multimedia/incorrecta.png' width='50px'><hr>";
+               echo "<img src='multimedia/incorrecta.jpeg' width='50px'><hr>";
            }
            //------FIN de la pregunta 10 ------------------
    
