@@ -137,3 +137,7 @@ function pintar(p1,p2,p3){
     document.getElementById("cuadro" +p2).style.backgroundColor = "Thistle";
     document.getElementById("cuadro" +p3).style.backgroundColor = "Thistle";
 }
+
+function reiniciar(){
+    window.location.href = 'practica7.html';
+}
