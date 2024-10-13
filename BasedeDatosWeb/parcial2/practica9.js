@@ -1,29 +1,23 @@
 $(document).ready(function(){
-    let cartas = new Array(54).fill(false);
-    var cont = 0;
-
+    cartas = new Array(54).fill(false);
+    //Función click del boton dar carta
     $("#dar_carta").click(function(){
         var b = true;
-        var cont = 0;
+        var num = Math.floor(Math.random()*54) + 1;
+        console.log("Numero de carta ="+num);
         while(b){
-            var num = Math.floor(Math.random()*54) +1;
-            console.log("Numero de carta= " +num);
-            if(cartas [num-1] == true){
-                continue;
+            if(cartas[num-1] == true){
+            
             }else{
                 $("#carta_activa").html("<img src='loteria/"+num+".jpg'>");
-                cartas(num-1) == true;
+                cartas[num-1] = true;
                 b=false;
                 cont ++;
             }
-        if(cont == 54){
-            console.log("ya se dieron todas las cartas");
-            b=false;
+            if(cont == 54){
+                console.log("ya se dieron todas las cartas");
+                b=false;
+            }
         }
-    }
-  });
-
+    });
 });
-
-
- 
